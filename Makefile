@@ -19,6 +19,12 @@ free.o: free.c
 inode.o: inode.c
 	gcc -Wall -Wextra -c $<
 
+pack.o: pack.c
+	gcc -Wall -Wextra -c $<
+
+ls.o: ls.c
+	gcc -Wall -Wextra -c $<
+
 simfs_test: simfs_test.o simfs.a
 	gcc -Wall -Wextra -o $@ $^
 

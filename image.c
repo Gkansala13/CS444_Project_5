@@ -6,11 +6,7 @@ int image_fd;
 
 int image_open(char *filename, int truncate)
 {
-    int flags = O_RDWR | O_CREAT;
-    if(truncate)
-    {
-        flags |= O_TRUNC;
-    }
+    int flags = O_RDWR | O_CREAT | (truncate? O_TRUNC:0);
     
     int image_fd = open(filename, flags, 0600);
     return image_fd;
